@@ -1,9 +1,10 @@
 import "./style.css";
 import createFooter from "./footer.js";
 import home from "./home.js";
+import menu from "./menu.js";
 
 const divContent = document.querySelector("#content");
-let setActiveModule;
+let activeModule;
 
 function createHeader() {
   let header = document.createElement("header");
@@ -25,11 +26,12 @@ function createNav() {
   let homeButton = document.createElement("button");
   homeButton.classList.add("nav-button");
   homeButton.innerHTML = "Home";
-  setActiveModule = home();
+  //activeModule = home();
 
   let menuButton = document.createElement("button");
   menuButton.classList.add("nav-button");
   menuButton.innerHTML = "Menù";
+  activeModule = menu();
 
   let contactButton = document.createElement("button");
   contactButton.classList.add("nav-button");
@@ -45,7 +47,7 @@ function createNav() {
 function createMain() {
   let main = document.createElement("div");
   main.classList.add("main");
-  main.appendChild(setActiveModule);
+  main.appendChild(activeModule);
   divContent.appendChild(main);
 }
 

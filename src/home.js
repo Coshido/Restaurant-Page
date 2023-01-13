@@ -1,6 +1,6 @@
 export default function home() {
   let mainContent = document.createElement("div");
-  mainContent.classList.add("main-content");
+  mainContent.classList.add("main-content-home");
 
   let heroDiv = document.createElement("div");
   heroDiv.classList.add("hero-div");
