@@ -2,11 +2,18 @@ import "./style.css";
 import createFooter from "./footer.js";
 import home from "./home.js";
 import menu from "./menu.js";
+import contact from "./contact.js";
 
 const divContent = document.querySelector("#content");
 let homeButton = document.createElement("button");
 let menuButton = document.createElement("button");
+let contactButton = document.createElement("button");
+
 let activeModule = home();
+
+let homeHandler = setActiveModule.bind(this, "home");
+let menuHandler = setActiveModule.bind(this, "menu");
+let contactHandler = setActiveModule.bind(this, "contact");
 
 function createHeader() {
   let header = document.createElement("header");
@@ -27,18 +34,18 @@ function createNav() {
 
   homeButton.classList.add("nav-button");
   homeButton.innerHTML = "Home";
-  homeButton.addEventListener("click", setActiveModule.bind(this, "home"));
+  homeButton.addEventListener("click", homeHandler);
   //activeModule = home();
   //setActiveModule("home");
 
   menuButton.classList.add("nav-button");
   menuButton.innerHTML = "Menù";
-  menuButton.addEventListener("click", setActiveModule.bind(this, "menu"));
+  menuButton.addEventListener("click", menuHandler);
   //activeModule = menu();
 
-  let contactButton = document.createElement("button");
   contactButton.classList.add("nav-button");
   contactButton.innerHTML = "Contacts";
+  contactButton.addEventListener("click", contactHandler);
 
   divNav.appendChild(homeButton);
   divNav.appendChild(menuButton);
@@ -51,11 +58,19 @@ function setActiveModule(string) {
   switch (string) {
     case "home":
       activeModule = home();
+      console.log("home");
       setHighlight(homeButton);
       break;
     case "menu":
       activeModule = menu();
+      console.log("menu");
       setHighlight(menuButton);
+      break;
+    case "contact":
+      activeModule = contact();
+      console.log("contact");
+      setHighlight(contactButton);
+      break;
     default:
       break;
   }

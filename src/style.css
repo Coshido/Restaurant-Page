@@ -77,7 +77,8 @@ footer {
 }
 
 .main-content-home,
-.main-content-menu {
+.main-content-menu,
+.main-content-contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,4 +162,18 @@ footer {
   grid-row-start: 2;
   grid-column-start: 2;
   text-align: end;
+}
+/* Contact CSS*/
+
+.main-content-contact {
+  gap: 20px;
+}
+
+.contact-title {
+  font-size: 52px;
+}
+
+.contact-phone,
+.contact-address {
+  align-self: flex-start;
 }
