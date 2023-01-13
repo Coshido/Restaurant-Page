@@ -7,6 +7,10 @@ body {
   font-family: Roboto;
   src: url(./Roboto-Regular.ttf);
 }
+@font-face {
+  font-family: Barrbar;
+  src: url(./Barrbar-DOKOR.otf);
+}
 
 #content {
   height: 100%;
@@ -24,7 +28,15 @@ footer {
 }
 
 header {
-  height: 20%;
+  font-family: Barrbar, sans-serif;
+  color: white;
+  font-size: 56px;
+  padding: 5px 5%;
+}
+
+.header-logo {
+  color: white;
+  font-style: Barrbar;
 }
 footer {
   display: flex;
