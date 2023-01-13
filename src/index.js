@@ -11,6 +11,7 @@ let contactButton = document.createElement("button");
 
 let activeModule = home();
 
+//binding listeners for click events
 let homeHandler = setActiveModule.bind(this, "home");
 let menuHandler = setActiveModule.bind(this, "menu");
 let contactHandler = setActiveModule.bind(this, "contact");
@@ -35,13 +36,10 @@ function createNav() {
   homeButton.classList.add("nav-button");
   homeButton.innerHTML = "Home";
   homeButton.addEventListener("click", homeHandler);
-  //activeModule = home();
-  //setActiveModule("home");
 
   menuButton.classList.add("nav-button");
   menuButton.innerHTML = "Menù";
   menuButton.addEventListener("click", menuHandler);
-  //activeModule = menu();
 
   contactButton.classList.add("nav-button");
   contactButton.innerHTML = "Contacts";
