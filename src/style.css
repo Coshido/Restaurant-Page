@@ -88,7 +88,9 @@ footer {
   gap: 60px;
   border-radius: 4px;
 }
-
+.highlight {
+  border-bottom: 1px solid white;
+}
 /* Home Module CSS*/
 
 .hero-div {

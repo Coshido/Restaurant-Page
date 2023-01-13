@@ -4,7 +4,9 @@ import home from "./home.js";
 import menu from "./menu.js";
 
 const divContent = document.querySelector("#content");
-let activeModule;
+let homeButton = document.createElement("button");
+let menuButton = document.createElement("button");
+let activeModule = home();
 
 function createHeader() {
   let header = document.createElement("header");
@@ -23,15 +25,16 @@ function createNav() {
   let divNav = document.createElement("div");
   divNav.classList.add("nav-bar");
 
-  let homeButton = document.createElement("button");
   homeButton.classList.add("nav-button");
   homeButton.innerHTML = "Home";
+  homeButton.addEventListener("click", setActiveModule.bind(this, "home"));
   //activeModule = home();
+  //setActiveModule("home");
 
-  let menuButton = document.createElement("button");
   menuButton.classList.add("nav-button");
   menuButton.innerHTML = "Menù";
-  activeModule = menu();
+  menuButton.addEventListener("click", setActiveModule.bind(this, "menu"));
+  //activeModule = menu();
 
   let contactButton = document.createElement("button");
   contactButton.classList.add("nav-button");
@@ -44,6 +47,27 @@ function createNav() {
   return divNav;
 }
 
+function setActiveModule(string) {
+  switch (string) {
+    case "home":
+      activeModule = home();
+      setHighlight(homeButton);
+      break;
+    case "menu":
+      activeModule = menu();
+      setHighlight(menuButton);
+    default:
+      break;
+  }
+  render();
+}
+
+function setHighlight(button) {
+  let buttons = [...document.querySelectorAll("button")];
+  buttons.map((x) => x.classList.remove("highlight"));
+  button.classList.add("highlight");
+}
+
 function createMain() {
   let main = document.createElement("div");
   main.classList.add("main");
@@ -52,9 +76,11 @@ function createMain() {
 }
 
 function render() {
+  divContent.innerHTML = "";
   createHeader();
   createMain();
   divContent.appendChild(createFooter());
 }
 
 render();
+setHighlight(homeButton);
