@@ -56,17 +56,14 @@ function setActiveModule(string) {
   switch (string) {
     case "home":
       activeModule = home();
-      console.log("home");
       setHighlight(homeButton);
       break;
     case "menu":
       activeModule = menu();
-      console.log("menu");
       setHighlight(menuButton);
       break;
     case "contact":
       activeModule = contact();
-      console.log("contact");
       setHighlight(contactButton);
       break;
     default:
