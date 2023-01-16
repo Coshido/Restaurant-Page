@@ -92,5 +92,9 @@ function render() {
   divContent.appendChild(createFooter());
 }
 
+function menuButtonClick() {
+  setActiveModule("menu");
+}
+
 render();
 setHighlight(homeButton);

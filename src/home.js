@@ -18,20 +18,6 @@ export default function home() {
   actionText.innerHTML = `Still waiting? Check out our menù and make a reservation <u>Now!</u>`;
   actionDiv.appendChild(actionText);
 
-  let actionButtons = document.createElement("div");
-  actionButtons.classList.add("action-button-div");
-  let menuButton = document.createElement("button");
-  menuButton.classList.add("action-button");
-  menuButton.innerHTML = "Menù";
-
-  let contactButton = document.createElement("button");
-  contactButton.classList.add("action-button");
-  contactButton.innerHTML = "Contacts";
-
-  actionButtons.appendChild(menuButton);
-  actionButtons.appendChild(contactButton);
-  actionDiv.appendChild(actionButtons);
-
   mainContent.appendChild(heroDiv);
   mainContent.appendChild(actionDiv);
   return mainContent;
